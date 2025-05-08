@@ -13,6 +13,8 @@
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
         <quarkus.platform.version>3.21.4</quarkus.platform.version>
+        <quarkus.langchain4j.version>0.26.1</quarkus.langchain4j.version>
+        <quarkus.dev.langchain4j.version>0.36.2</quarkus.dev.langchain4j.version>
         <skipITs>true</skipITs>
         <surefire-plugin.version>3.5.2</surefire-plugin.version>
     </properties>
@@ -30,6 +32,9 @@
     </dependencyManagement>
 
     <dependencies>
+
+        <!-- Production -->
+
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-arc</artifactId>
@@ -45,14 +50,30 @@
         <dependency>
             <groupId>io.quarkiverse.langchain4j</groupId>
             <artifactId>quarkus-langchain4j-ollama</artifactId>
-            <version>0.27.0.CR1</version>
+            <version>${quarkus.langchain4j.version}</version>
         </dependency>
+        <dependency>
+            <groupId>io.quarkiverse.langchain4j</groupId>
+            <artifactId>quarkus-langchain4j-infinispan</artifactId>
+            <version>${quarkus.langchain4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-embeddings-bge-small-en-q</artifactId>
+            <version>${quarkus.dev.langchain4j.version}</version>
+        </dependency>
+
+        <!-- Provided -->
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.38</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- Tests -->
+
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-junit5</artifactId>
