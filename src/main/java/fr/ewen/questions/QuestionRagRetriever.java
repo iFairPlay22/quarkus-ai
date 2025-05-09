@@ -40,7 +40,7 @@ public class QuestionRagRetriever {
                             case UserMessage u -> u.singleText();
                         }
                     );
-                    prompt.append("\nPlease, only use the following information:\n");
+                    prompt.append("\nPlease, use the following information:\n");
                     contents.forEach(content -> prompt.append("- ").append(content.textSegment().text()).append("\n"));
 
                     Log.infof("Using prompt '%s'", prompt.toString());

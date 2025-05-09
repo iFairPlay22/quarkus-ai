@@ -12,7 +12,7 @@ public class QuestionResource {
     @GET
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public QuestionResponse answer(@QueryParam("q") String question) {
+    public String answer(@QueryParam("q") String question) {
         return questionService.answerTo(question);
     }
 }

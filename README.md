@@ -4,6 +4,22 @@ This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.
 
+## Results
+
+Hello! What's my name? And what's my favourite color?
+
+
+> \<think>
+> Okay, let's see. The user asked,
+> "Hello! What's my name? And what's my favourite color?" And they mentioned that their name is Ewen. So first, I need to answer both parts of the question.
+> 
+> Wait, the name part is straightforward. They told me their name is Ewen, so I can just say that. But the favorite color part requires using the function. I called the favouriteColour function with the username "Ewen" and got the response "blue". So I should relay that information back.
+> 
+> I need to make sure I address both questions: confirming their name and stating their favorite color. Let me structure the response clearly. Maybe start with a greeting, mention the name, and then the color. Keep it friendly and concise.
+> \</think>
+> 
+> --> Hello, Ewen! Your favorite color is blue. 😊 <--
+
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:
@@ -21,46 +37,3 @@ The application can be packaged using:
 ```shell script
 ./mvnw package
 ```
-
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
-
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
-
-If you want to build an _über-jar_, execute the following command:
-
-```shell script
-./mvnw package -Dquarkus.package.jar.type=uber-jar
-```
-
-The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
-
-## Creating a native executable
-
-You can create a native executable using:
-
-```shell script
-./mvnw package -Dnative
-```
-
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using:
-
-```shell script
-./mvnw package -Dnative -Dquarkus.native.container-build=true
-```
-
-You can then execute your native executable with: `./target/ai-1.0.0-SNAPSHOT-runner`
-
-If you want to learn more about building native executables, please consult <https://quarkus.io/guides/maven-tooling>.
-
-## Related Guides
-
-- REST ([guide](https://quarkus.io/guides/rest)): A Jakarta REST implementation utilizing build time processing and Vert.x. This extension is not compatible with the quarkus-resteasy extension, or any of the extensions that depend on it.
-
-## Provided Code
-
-### REST
-
-Easily start your REST Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
