@@ -32,7 +32,7 @@ public class QuestionRagIngestion {
         EmbeddingStoreIngestor ingestor = EmbeddingStoreIngestor.builder()
             .embeddingStore(store)
             .embeddingModel(model)
-            .documentSplitter(recursive(1024, 0))
+            .documentSplitter(recursive(100, 25))
             .build();
 
         List<Document> documents = FileSystemDocumentLoader.loadDocumentsRecursively(path);

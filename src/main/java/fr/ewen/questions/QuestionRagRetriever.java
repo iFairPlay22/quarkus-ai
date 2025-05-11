@@ -28,10 +28,9 @@ public class QuestionRagRetriever {
         EmbeddingStoreContentRetriever contentRetriever = EmbeddingStoreContentRetriever.builder()
             .embeddingModel(model)
             .embeddingStore(store)
-            .maxResults(3) // Large segments
             .build();
 
-        DefaultRetrievalAugmentor contentAugmentor = DefaultRetrievalAugmentor.builder()
+        DefaultRetrievalAugmentor contentAugmenter = DefaultRetrievalAugmentor.builder()
                 .contentRetriever(contentRetriever)
                 .contentInjector((contents, message) -> {
                     StringBuilder prompt = new StringBuilder(
@@ -40,6 +39,7 @@ public class QuestionRagRetriever {
                             case UserMessage u -> u.singleText();
                         }
                     );
+
                     prompt.append("\nPlease, use the following information:\n");
                     contents.forEach(content -> prompt.append("- ").append(content.textSegment().text()).append("\n"));
 
@@ -50,6 +50,6 @@ public class QuestionRagRetriever {
 
         Log.infof("Ending rag retrieval...");
 
-        return contentAugmentor;
+        return contentAugmenter;
     }
 }

@@ -6,19 +6,17 @@ If you want to learn more about Quarkus, please visit its website: <https://quar
 
 ## Results
 
-Hello! What's my name? And what's my favourite color?
-
+Hello! What's my name? And what's my favourite color? And my age?
 
 > \<think>
-> Okay, let's see. The user asked,
-> "Hello! What's my name? And what's my favourite color?" And they mentioned that their name is Ewen. So first, I need to answer both parts of the question.
+> Okay, let's see. The user asked three things: their name, favorite color, and age. The assistant already called the function to get the favorite color, which is blue. The user's name is Ewen, and their age is 24. So I need to put that all together.
 > 
-> Wait, the name part is straightforward. They told me their name is Ewen, so I can just say that. But the favorite color part requires using the function. I called the favouriteColour function with the username "Ewen" and got the response "blue". So I should relay that information back.
-> 
-> I need to make sure I address both questions: confirming their name and stating their favorite color. Let me structure the response clearly. Maybe start with a greeting, mention the name, and then the color. Keep it friendly and concise.
+> First, greet the user. Then mention their name. Then the favorite color. Then their age. Make sure it's all clear and friendly. Let me check if there's any missing info. No, everything's there. Just need to present it naturally.
 > \</think>
 > 
-> --> Hello, Ewen! Your favorite color is blue. 😊 <--
+> Hello, Ewen! Your favorite color is blue, and you are 24 years old. Let me know if you need anything else! 😊
+> 
+> Sources: /Users/ewen_bouquet/Documents/Perso/ai/src/main/resources/rag/user_name.txt, /Users/ewen_bouquet/Documents/Perso/ai/src/main/resources/rag/user_age.txt
 
 ## Running the application in dev mode
 
